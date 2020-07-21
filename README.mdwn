@@ -8,6 +8,7 @@ sudo touch /etc/profile.d/atlas_download_snapshot.sh
 vi /etc/profile.d/atlas_download_snapshot.sh
 
 Add the following global variables but do change the values
+
 export ATLAS_BACKUP_DOWNLOADS_HOME=/home/ec2-user/myapp/bin
 export ATLAS_BACKUP_DOWNLOADS_S3_BUCKET=naresh.maharaj.useast
 export ATLAS_BACKUP_DOWNLOADS_CLUSTER=myapp
