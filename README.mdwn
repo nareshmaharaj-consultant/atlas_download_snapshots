@@ -10,11 +10,17 @@ vi /etc/profile.d/atlas_download_snapshot.sh
 Add the following global variables but do change the values
 
 export ATLAS_BACKUP_DOWNLOADS_HOME=/home/ec2-user/myapp/bin
+
 export ATLAS_BACKUP_DOWNLOADS_S3_BUCKET=naresh.maharaj.useast
+
 export ATLAS_BACKUP_DOWNLOADS_CLUSTER=myapp
+
 export ATLAS_BACKUP_DOWNLOADS_GROUP=5bbcd3d9f2a30b7b3c8419bd
+
 export ATLAS_BACKUP_DOWNLOADS_USER=gfhoakks:**********-91dd6026ea23
+
 export ATLAS_BACKUP_DOWNLOADS_LOG=$ATLAS_BACKUP_DOWNLOADS_HOME/atlas_download_snapshots.log
+
 export ATLAS_BACKUP_DOWNLOADS_SLACK_WEB_HOOK="https://hooks.slack.com/services/****LL7W22/****VBN1F/********H1J4pz7dK"
 
 ###### Files:
