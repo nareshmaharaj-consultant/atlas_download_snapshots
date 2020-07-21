@@ -1,0 +1,44 @@
+# Atlas Scripts for downloading backup snapshots and uploading to S3, GNU bash, version 4.2.46(2)-release (x86_64-redhat-linux-gnu)
+
+## Instructions
+
+######  Add GLOBAL variables for scripts
+
+sudo touch /etc/profile.d/atlas_download_snapshot.sh
+vi /etc/profile.d/atlas_download_snapshot.sh
+
+Add the following global variables but do change the values
+export ATLAS_BACKUP_DOWNLOADS_HOME=/home/ec2-user/nationwide/bin
+export ATLAS_BACKUP_DOWNLOADS_S3_BUCKET=naresh.maharaj.useast
+export ATLAS_BACKUP_DOWNLOADS_CLUSTER=NBSExitStrategy
+export ATLAS_BACKUP_DOWNLOADS_GROUP=5bbcd3d9f2a30b7b3c8419bd
+export ATLAS_BACKUP_DOWNLOADS_USER=gfhoakks:**********-91dd6026ea23
+export ATLAS_BACKUP_DOWNLOADS_LOG=$ATLAS_BACKUP_DOWNLOADS_HOME/atlas_download_snapshots.log
+export ATLAS_BACKUP_DOWNLOADS_SLACK_WEB_HOOK="https://hooks.slack.com/services/****LL7W22/****VBN1F/********H1J4pz7dK"
+
+###### Files:
+atlasSnapshotToS3.sh
+_createSnapshotJob.sh
+_downloadSnapshotJob.sh
+_getListBackupSnapshots.sh
+_uploadBackupSnapshotAWS_S3.sh
+
+###### To run:
+./atlasSnapshotToS3
+
+###### Check logs:
+tail -f atlas_download_snapshots.log
+
+###### e.g. crontab every 2 hours:
+0 */2 * * * /home/ec2-user/nationwide/bin/./atlasSnapshotToS3.sh
+
+Configure at a time after the Atlas snapshots should be completed. Then allow 30 mins minimum for downloading and uploading the snapshot to the S3 bucket, but may be longer depending on the size of the snapshot. So if my Atlas backup is every 2 hours starting at 00:30 UTC, I can set my crontab to execute at every 2 hours 00:00, 02:00, ... Some experimenting may be requried to get the best fit depending on backup frequency and size of the backups.
+
+###### Dependencies:
+Install the aws cli
+Install jq
+
+
+###### Slack Web Hook:
+Notificatoins for failures are sent to slack if the env variable for slack exists.
+You can set up a new slack app by visiting: https://api.slack.com/apps
