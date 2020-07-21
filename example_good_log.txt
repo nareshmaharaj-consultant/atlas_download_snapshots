@@ -1,0 +1,28 @@
+2020-07-21T14.00.02 - INFO - Getting a list of the snapshots for Atlas group: 5bbcd3d9f2a30b7b3c8419bd and cluster: NBSExitStrategy
+2020-07-21T14.00.03 - INFO - Creating restore-job from snapshotId 5f16e016f53c2f7904325f54
+2020-07-21T14.00.03 - INFO - Sending restore-job with payload: {"snapshotId" : "5f16e016f53c2f7904325f54", "deliveryType" : "download"}
+2020-07-21T14.00.05 - INFO - Received restore-job: "https://cloud.mongodb.com/api/atlas/v1.0/groups/5bbcd3d9f2a30b7b3c8419bd/clusters/NBSExitStrategy/backup/restoreJobs/5f16f4e5a3b61f4ea6f2de29"
+2020-07-21T14.00.05 - INFO - Creating restore-job from snapshotId 5f16e016f53c2f7904325f5e
+2020-07-21T14.00.05 - INFO - Sending restore-job with payload: {"snapshotId" : "5f16e016f53c2f7904325f5e", "deliveryType" : "download"}
+2020-07-21T14.00.06 - INFO - Received restore-job: "https://cloud.mongodb.com/api/atlas/v1.0/groups/5bbcd3d9f2a30b7b3c8419bd/clusters/NBSExitStrategy/backup/restoreJobs/5f16f4e6d8f4c70053ace126"
+2020-07-21T14.00.06 - INFO - Creating restore-job from snapshotId 5f16e017f53c2f7904325f66
+2020-07-21T14.00.07 - INFO - Sending restore-job with payload: {"snapshotId" : "5f16e017f53c2f7904325f66", "deliveryType" : "download"}
+2020-07-21T14.00.08 - INFO - Received restore-job: "https://cloud.mongodb.com/api/atlas/v1.0/groups/5bbcd3d9f2a30b7b3c8419bd/clusters/NBSExitStrategy/backup/restoreJobs/5f16f4e8128ca85215fe2b24"
+2020-07-21T14.00.08 - INFO - Creating restore-job from snapshotId 5f16e017f53c2f7904325f6d
+2020-07-21T14.00.08 - INFO - Sending restore-job with payload: {"snapshotId" : "5f16e017f53c2f7904325f6d", "deliveryType" : "download"}
+2020-07-21T14.00.10 - INFO - Received restore-job: "https://cloud.mongodb.com/api/atlas/v1.0/groups/5bbcd3d9f2a30b7b3c8419bd/clusters/NBSExitStrategy/backup/restoreJobs/5f16f4e9a07b34799a21e5af"
+2020-07-21T14.00.10 - INFO - Creating the Download Gunzip (gz) file for snapshot restore-job: https://cloud.mongodb.com/api/atlas/v1.0/groups/5bbcd3d9f2a30b7b3c8419bd/clusters/NBSExitStrategy/backup/restoreJobs/5f16f4e5a3b61f4ea6f2de29
+2020-07-21T14.00.11 - INFO - Download snapshot file not ready - sleeping for 1m mins
+2020-07-21T14.01.12 - INFO - Download snapshot file not ready - sleeping for 1m mins
+2020-07-21T14.02.14 - INFO - Download snapshot file not ready - sleeping for 1m mins
+2020-07-21T14.03.15 - INFO - Download snapshot file not ready - sleeping for 1m mins
+2020-07-21T14.04.17 - INFO - Creating the Download Gunzip (gz) file for snapshot restore-job: https://cloud.mongodb.com/api/atlas/v1.0/groups/5bbcd3d9f2a30b7b3c8419bd/clusters/NBSExitStrategy/backup/restoreJobs/5f16f4e6d8f4c70053ace126
+2020-07-21T14.04.19 - INFO - Creating the Download Gunzip (gz) file for snapshot restore-job: https://cloud.mongodb.com/api/atlas/v1.0/groups/5bbcd3d9f2a30b7b3c8419bd/clusters/NBSExitStrategy/backup/restoreJobs/5f16f4e8128ca85215fe2b24
+2020-07-21T14.04.20 - INFO - Creating the Download Gunzip (gz) file for snapshot restore-job: https://cloud.mongodb.com/api/atlas/v1.0/groups/5bbcd3d9f2a30b7b3c8419bd/clusters/NBSExitStrategy/backup/restoreJobs/5f16f4e9a07b34799a21e5af
+2020-07-21T14.04.22 - INFO - Uploading file: restore-5f16e016f53c2f7904325f54.tar.gz to S3 Bucket: naresh.maharaj.useast
+2020-07-21T14.05.08 - INFO - S3 Upload Success for file: restore-5f16e016f53c2f7904325f54.tar.gz
+2020-07-21T14.05.08 - INFO - Uploading file: restore-5f16e016f53c2f7904325f5e.tar.gz to S3 Bucket: naresh.maharaj.useast
+2020-07-21T14.05.11 - INFO - S3 Upload Success for file: restore-5f16e016f53c2f7904325f5e.tar.gz
+2020-07-21T14.05.11 - INFO - Uploading file: restore-5f16e017f53c2f7904325f66.tar.gz to S3 Bucket: naresh.maharaj.useast
+2020-07-21T14.05.15 - INFO - S3 Upload Success for file: restore-5f16e017f53c2f7904325f66.tar.gz
+2020-07-21T14.05.15 - INFO - Uploading file: restore-5f16e017f53c2f7904325f6d.tar.gz to S3 Bucket: naresh.maharaj.useast
