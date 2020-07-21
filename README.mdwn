@@ -5,6 +5,7 @@
 ######  Add GLOBAL variables for scripts
 
 sudo touch /etc/profile.d/atlas_download_snapshot.sh
+
 vi /etc/profile.d/atlas_download_snapshot.sh
 
 Add the following global variables but do change the values
