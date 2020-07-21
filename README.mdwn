@@ -8,9 +8,9 @@ sudo touch /etc/profile.d/atlas_download_snapshot.sh
 vi /etc/profile.d/atlas_download_snapshot.sh
 
 Add the following global variables but do change the values
-export ATLAS_BACKUP_DOWNLOADS_HOME=/home/ec2-user/nationwide/bin
+export ATLAS_BACKUP_DOWNLOADS_HOME=/home/ec2-user/myapp/bin
 export ATLAS_BACKUP_DOWNLOADS_S3_BUCKET=naresh.maharaj.useast
-export ATLAS_BACKUP_DOWNLOADS_CLUSTER=NBSExitStrategy
+export ATLAS_BACKUP_DOWNLOADS_CLUSTER=myapp
 export ATLAS_BACKUP_DOWNLOADS_GROUP=5bbcd3d9f2a30b7b3c8419bd
 export ATLAS_BACKUP_DOWNLOADS_USER=gfhoakks:**********-91dd6026ea23
 export ATLAS_BACKUP_DOWNLOADS_LOG=$ATLAS_BACKUP_DOWNLOADS_HOME/atlas_download_snapshots.log
@@ -30,7 +30,7 @@ _uploadBackupSnapshotAWS_S3.sh
 tail -f atlas_download_snapshots.log
 
 ###### e.g. crontab every 2 hours:
-0 */2 * * * /home/ec2-user/nationwide/bin/./atlasSnapshotToS3.sh
+0 */2 * * * /home/ec2-user/myapp/bin/./atlasSnapshotToS3.sh
 
 Configure at a time after the Atlas snapshots should be completed. Then allow 30 mins minimum for downloading and uploading the snapshot to the S3 bucket, but may be longer depending on the size of the snapshot. So if my Atlas backup is every 2 hours starting at 00:30 UTC, I can set my crontab to execute at every 2 hours 00:00, 02:00, ... Some experimenting may be requried to get the best fit depending on backup frequency and size of the backups.
 
