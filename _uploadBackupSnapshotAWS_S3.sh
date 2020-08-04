@@ -7,6 +7,6 @@ if [[ $SIZE_FROM_S3 -gt 0 ]];then
     echo "`date +%FT%H.%M.%S` - INFO - S3 Upload Success for file: ${URL##*/}" >> $ATLAS_BACKUP_DOWNLOADS_LOG
 else
     ERR_MSG="`date +%FT%H.%M.%S` - ERROR - S3 Upload for file: ${URL##*/} unconfirmed" 
-    ecoh $ERR_MSG >> $ATLAS_BACKUP_DOWNLOADS_LOG
+    echo $ERR_MSG >> $ATLAS_BACKUP_DOWNLOADS_LOG
     curl -X POST -H 'Content-type: application/json' --data '{"text": "'"$ERR_MSG"'"}' $ATLAS_BACKUP_DOWNLOADS_SLACK_WEB_HOOK 2>/dev/null
 fi
