@@ -12,4 +12,4 @@ curl --user $ATLAS_BACKUP_DOWNLOADS_USER --digest --include \
   --header "Accept: application/json" \
   --header "Content-Type: application/json" \
   --request GET "https://cloud.mongodb.com/api/atlas/v1.0/groups/$ATLAS_BACKUP_DOWNLOADS_GROUP/clusters/$ATLAS_BACKUP_DOWNLOADS_CLUSTER/backup/snapshots/?pretty=true" \
-2>/dev/null | tail -n +15 | jq '.results[0].snapshotIds[]' | while read line ; do echo $line ; done
+2>/dev/null | tail -n +15 | jq '.results[0] | if (.snapshotIds | length) != 0 then .snapshotIds[] else "List of snapshotIds not present. Check if Sharded. This config is for Sharded environment only" end' | while read line ; do echo $line ; done
