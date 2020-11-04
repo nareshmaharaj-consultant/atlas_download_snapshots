@@ -7,7 +7,7 @@ JOB=$(curl --user $ATLAS_BACKUP_DOWNLOADS_USER --digest --include \
      --header "Content-Type: application/json" \
      --request POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/$ATLAS_BACKUP_DOWNLOADS_GROUP/clusters/$ATLAS_BACKUP_DOWNLOADS_CLUSTER/backup/restoreJobs/?pretty=true" \
      --data "$SNAPSHOT_PAYLOAD" \
-2>/dev/null | tail -n +14  | jq '.links[0].href')
+2>/dev/null | awk '/^{/{p=1}p' | jq '.links[0].href')
 echo "`date +%FT%H.%M.%S` - INFO - Received restore-job: $JOB" >> $ATLAS_BACKUP_DOWNLOADS_LOG
 echo $JOB | tee -a $OUTFILE
 #2>/dev/null

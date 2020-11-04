@@ -15,11 +15,11 @@ while true;do
      	--header "Accept: application/json" \
      	--header "Content-Type: application/json" \
      	--request GET "$1/?pretty=true" \
-	2>/dev/null | tail -n +14  | jq '.deliveryUrl[]')
+	2>/dev/null | tail -n +14  | awk '/^{/{p=1}p' | jq '.deliveryUrl[]')
 	if [[ $DOWNLOAD_FILE =~ ".tar.gz" ]];then
 		break
 	else
-		echo "`date +%FT%H.%M.%S` - INFO - Download snapshot file not ready - sleeping for $SLEEPTIME mins" >> $ATLAS_BACKUP_DOWNLOADS_LOG
+		echo "`date +%FT%H.%M.%S` - INFO - Download snapshot file: $DOWNLOAD_FILE not ready - sleeping for $SLEEPTIME mins" >> $ATLAS_BACKUP_DOWNLOADS_LOG
 		sleep $SLEEPTIME
 	fi
 done
